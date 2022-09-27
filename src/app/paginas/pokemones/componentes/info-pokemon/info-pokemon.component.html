@@ -1,5 +1,5 @@
 <p>
-  <ion-card>
+  <ion-card *ngIf="pokemon"[routerLink]="['',pokemon.name]">
     <img [src]="pokemon.sprites.front_default"/>
     <ion-card-header>
       <ion-card-title>{{pokemon.name}}</ion-card-title>
