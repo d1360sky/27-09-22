@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>pokemones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-template #cargando>
+    <!--template reference-->
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  </ng-template>
+  <ng-template #losDatos>
+    <ion-label>
+      <app-info-pokemon *ngFor="let info of resultado.results"
+        [url]="info.url" >
+      </app-info-pokemon>
+    </ion-label>
+  </ng-template>
+  <p *ngIf="resultado; then losDatos else cargando" ></p>
+
+</ion-content>
